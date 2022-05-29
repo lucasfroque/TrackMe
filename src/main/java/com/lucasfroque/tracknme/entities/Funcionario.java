@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Table(name="TB_FUNCIONARIO")
 public class Funcionario implements Serializable {
 
     @Id
