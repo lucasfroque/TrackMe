@@ -45,11 +45,10 @@ class FuncionarioControllerTest {
     private ObjectMapper mapper;
 
     private Funcionario funcionario;
-    private Funcionario funcionario2;
 
     @BeforeEach
     void setUp() {
-    startFuncionario();
+        startFuncionario();
     }
 
     @Test
@@ -112,7 +111,7 @@ class FuncionarioControllerTest {
 
         mockMvc.perform(delete("/funcionarios/{id}", ID)
                         .contentType(MediaType.APPLICATION_JSON))
-                        .andExpect(status().isNoContent());
+                .andExpect(status().isNoContent());
     }
     private void startFuncionario(){
         funcionario = new Funcionario(ID, NOME, IDADE, CEP, SEXO, ENDERECO, BAIRRO, CIDADE, ESTADO);

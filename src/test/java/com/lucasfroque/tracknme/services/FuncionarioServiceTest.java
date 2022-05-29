@@ -1,5 +1,6 @@
 package com.lucasfroque.tracknme.services;
 
+import com.lucasfroque.tracknme.entities.CepResponse;
 import com.lucasfroque.tracknme.entities.Funcionario;
 import com.lucasfroque.tracknme.repositories.FuncionarioRepository;
 import com.lucasfroque.tracknme.services.exceptions.ResourceNotFoundException;
@@ -164,6 +165,14 @@ class FuncionarioServiceTest {
 
     }
 
+    @Test
+    void whenGetInfoCepThenReturnInfo(){
+        CepResponse response = service.getInfoCep(CEP);
+        assertEquals(ESTADO, response.getUf());
+        assertEquals(CIDADE, response.getLocalidade());
+        assertEquals(BAIRRO, response.getBairro());
+        assertEquals(ENDERECO, response.getLogradouro());
+    }
     private void startFuncionario(){
         funcionario = new Funcionario(ID, NOME, IDADE, CEP, SEXO, ENDERECO, BAIRRO, CIDADE, ESTADO);
         optionalFuncionario = Optional.of(new Funcionario(1L, NOME, IDADE, CEP, SEXO, ENDERECO, BAIRRO, CIDADE, ESTADO));
