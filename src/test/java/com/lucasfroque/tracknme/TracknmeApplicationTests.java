@@ -8,6 +8,7 @@ class TracknmeApplicationTests {
 
 	@Test
 	void contextLoads() {
+		TracknmeApplication.main(new String[]{});
 	}
 
 }

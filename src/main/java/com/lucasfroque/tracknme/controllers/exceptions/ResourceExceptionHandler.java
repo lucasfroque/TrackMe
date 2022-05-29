@@ -1,6 +1,6 @@
 package com.lucasfroque.tracknme.controllers.exceptions;
 
-import com.lucasfroque.project.services.exceptions.ResourceNotFoundException;
+import com.lucasfroque.tracknme.services.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
